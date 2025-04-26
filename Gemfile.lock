@@ -6,7 +6,6 @@ GEM
     logger (1.7.0)
     nokolexbor (0.6.0)
     nokolexbor (0.6.0-arm64-darwin)
-    regexp_parser (2.10.0)
     rexml (3.4.1)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
@@ -28,9 +27,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    watir (7.3.0)
-      regexp_parser (>= 1.2, < 3)
-      selenium-webdriver (~> 4.2)
     websocket (1.2.11)
 
 PLATFORMS
@@ -40,7 +36,7 @@ PLATFORMS
 DEPENDENCIES
   nokolexbor
   rspec
-  watir
+  selenium-webdriver
 
 BUNDLED WITH
    2.6.3

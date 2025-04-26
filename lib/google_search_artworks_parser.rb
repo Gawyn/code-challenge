@@ -1,11 +1,11 @@
 require 'nokolexbor'
 require 'open-uri'
-require 'watir'
+require 'selenium-webdriver'
 
 class GoogleSearchArtworksParser
   def self.parse(location)
-    browser.goto(process_location(location))
-    doc = Nokolexbor::HTML(browser.html)
+    driver.navigate.to process_location(location)
+    doc = Nokolexbor::HTML(driver.page_source)
     objects = doc.css(".iELo6")
 
     {"artworks" => process_objects(objects)}
@@ -13,8 +13,8 @@ class GoogleSearchArtworksParser
 
   private
 
-  def self.browser
-    @browser ||= Watir::Browser.new
+  def self.driver
+    @driver ||= Selenium::WebDriver.for :chrome
   end
 
   def self.process_location(location)
